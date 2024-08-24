@@ -1,0 +1,6 @@
+---
+# defaults file for ansible-sshd-setup
+sshd_config_client_alive_count: 3
+sshd_config_client_alive_internal: 60
+sshd_config_name: 00_custom.conf
+sshd_config_port: 22

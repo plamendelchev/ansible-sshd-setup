@@ -1,0 +1,10 @@
+---
+# tasks file for ansible-sshd-setup
+- name: Ensure sshd configuration
+  ansible.builtin.template:
+    src: sshd_config.j2
+    dest: /etc/ssh/sshd_config.d/{{ sshd_config_name }}
+    validate: sshd -T -f %s
+    mode: "0600"
+  notify:
+    - Reload sshd
